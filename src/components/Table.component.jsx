@@ -11,20 +11,29 @@ const  TableHeader = () => {
     )
 };
 
-const TableBody = () => {
+const TableBody = (props) => {
+    const rows = props.charactersData.map((row, index) => {
+        return (
+            <tr key={index}>
+                <td>{row.name}</td>
+                <td>{row.job}</td>
+            </tr>
+        )
+    })
+    console.log(rows);
     return (
-        <tbody />
+        <tbody>{rows}</tbody>
     )
 };
 
 class Table extends Component {
     render() {
-        const { characterData } = this.props;
+        const { charactersData } = this.props;
 
         return (
             <table>
                 <TableHeader />
-                <TableBody characterData={characterData} />
+                <TableBody charactersData={charactersData} />
             </table>
         )
     }
