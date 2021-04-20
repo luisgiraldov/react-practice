@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Table from './components/Table.component';
+import Form from './components/Form.component';
 
 class App extends Component {
     state = {
@@ -20,8 +21,9 @@ class App extends Component {
         const { characters } = this.state;
 
         return (
-            <div className="App">
+            <div className="container">
                 <Table charactersData={characters} removeCharacter={this.removeCharacter} />
+                <Form />
             </div>
         )
     }
