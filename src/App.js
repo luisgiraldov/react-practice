@@ -17,6 +17,8 @@ class App extends Component {
         })
     }
 
+    //receives the local state from other component and updates the app state with it
+    //spreads the App state first and then adds the state passed from other component so the App state doesn't mutate
     handleSubmit = character => {
         this.setState({
             characters: [
