@@ -17,13 +17,22 @@ class App extends Component {
         })
     }
 
+    handleSubmit = character => {
+        this.setState({
+            characters: [
+                ...this.state.characters, 
+                character
+            ]
+        })
+    }
+
     render() {
         const { characters } = this.state;
 
         return (
             <div className="container">
                 <Table charactersData={characters} removeCharacter={this.removeCharacter} />
-                <Form />
+                <Form handleSubmit={this.handleSubmit} />
             </div>
         )
     }
